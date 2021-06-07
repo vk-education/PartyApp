@@ -6,8 +6,10 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.*
+import android.graphics.drawable.BitmapDrawable
 import android.media.ExifInterface
 import android.media.MediaScannerConnection
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -16,14 +18,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.project.utils.setPreferenceObject
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import kotlinx.android.synthetic.main.fragment_login_screen2.*
 import kotlinx.android.synthetic.main.fragment_new_event.*
 import service.NewEventService
 import java.io.ByteArrayOutputStream
@@ -38,6 +44,7 @@ class NewEventFragment : Fragment() {
     private val CAMERA = 112
     private val PERMISSION_ALL = 2
     private lateinit var pref: SharedPreferences
+    var downLoadUrl = ""
 
     private var PERMISSIONS = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -68,6 +75,8 @@ class NewEventFragment : Fragment() {
         val tit: EditText = view.findViewById(R.id.title_new)
         val image: ImageView = view.findViewById(R.id.imageView2)
 
+        val remoteDB = Firebase.firestore
+
         pref = requireContext().getSharedPreferences(
             "sharedPreferences",
             AppCompatActivity.MODE_PRIVATE
@@ -76,12 +85,24 @@ class NewEventFragment : Fragment() {
         new_event.setOnClickListener {
             newEventService.saveEvenName(tit.text.toString())
             newEventService.saveEvenDescr(des.text.toString())
-            if (resizedPhoto != null)
+            if (resizedPhoto != null) {
                 setPreferenceObject(requireContext(), resizedPhoto, "photo", pref)
+            }
+
+            val event = hashMapOf(
+                "imageUrl" to downLoadUrl,
+                "title" to tit.text.toString(),
+                "description" to des.text.toString()
+            )
+
+            remoteDB.collection("event").add(event).addOnSuccessListener {
+            }
+
             fragmentManager?.popBackStack()
         }
 
         add_photo.setOnClickListener {
+            new_event.isEnabled = false
             uploadPhoto()
         }
 
@@ -151,6 +172,7 @@ class NewEventFragment : Fragment() {
                             input.close()
                         }
 
+
                         pathPhoto = saveImage(newBitmap!!)
 
                         val scaleBitmap = scaleCenterCrop(newBitmap, 800, 800)
@@ -159,6 +181,36 @@ class NewEventFragment : Fragment() {
 
                         Glide.with(this).load(resizedPhoto!!).into(imageView2)
 
+                        val storage = FirebaseStorage.getInstance();
+                        val storageRef = storage.reference
+                        val mountainsRef = storageRef.child(
+                            "${
+                                (Calendar.getInstance()
+                                    .timeInMillis)
+                            }.jpg"
+                        )
+                        imageView2.isDrawingCacheEnabled = true
+                        imageView2.buildDrawingCache()
+                        val bitmap = resizedPhoto
+                        val baos = ByteArrayOutputStream()
+                        bitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+                        val data = baos.toByteArray()
+
+                        val uploadTask = mountainsRef.putBytes(data)
+                        uploadTask.addOnFailureListener {
+
+                        }.addOnSuccessListener { taskSnapshot ->
+                            mountainsRef.downloadUrl.addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    downLoadUrl = task.result.toString()
+                                    new_event.isEnabled = true
+                                } else {
+                                    new_event.isEnabled = true
+                                    downLoadUrl = ""
+                                }
+                            }
+                        }
+
                     }
 
                 } catch (e: IOException) {
@@ -166,20 +218,6 @@ class NewEventFragment : Fragment() {
                 }
 
             }
-        }
-
-        if (requestCode == CAMERA) {
-
-            val thumbnail = data!!.extras!!.get("data") as Bitmap
-
-            val scaleBitmap = scaleCenterCrop(thumbnail, 800, 800)
-
-            val resizedPhoto = Bitmap.createScaledBitmap(scaleBitmap!!, 800, 800, true)
-
-            imageView2.setImageBitmap(resizedPhoto)
-
-            pathPhoto = saveImage(resizedPhoto)
-
         }
 
     }

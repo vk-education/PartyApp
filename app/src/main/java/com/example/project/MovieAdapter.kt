@@ -11,20 +11,33 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.project.R
 import com.example.project.utils.getPreferenceObjectJson
+import kotlinx.android.synthetic.main.fragment_new_event.*
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class MovieAdapter(val movies: List<Movie>, val fragmentManager: FragmentManager, val pref: SharedPreferences) :
+class MovieAdapter(
+    val movies: List<Movie>,
+    val fragmentManager: FragmentManager,
+    val pref: SharedPreferences
+) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    class MovieViewHolder(itemView: View, val fragmentManager: FragmentManager,  val pref: SharedPreferences) :
+    class MovieViewHolder(
+        itemView: View,
+        val fragmentManager: FragmentManager,
+        val pref: SharedPreferences
+    ) :
         RecyclerView.ViewHolder(itemView) {
 
         fun bind(movie: Movie) {
             itemView.movie_item_tv_name.text = movie.title
             itemView.descriprion.text = movie.description
-            itemView.movie_item_poster.setImageDrawable(BitmapDrawable(itemView.resources, getPreferenceObjectJson(itemView.context, "photo", pref)))
+            if (movie.picture != "")
+                Glide.with(itemView.context).load(movie.picture).into(itemView.movie_item_poster)
+            else
+                Glide.with(itemView.context).load(R.drawable.ic_baseline_event_24).into(itemView.movie_item_poster)
             itemView.setOnClickListener() {
 
                 val descriptionFragment = DescriptionFragment()

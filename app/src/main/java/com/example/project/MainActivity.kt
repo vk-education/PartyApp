@@ -37,9 +37,7 @@ class MainActivity : AppCompatActivity() {
         contactFragment = ContactFragment()
         currentFragMain = "MainFragment"
         currentFragInMain = "AboutFragment"
-
         getPermission()
-
         if (currentFragMain != null) {
             when (currentFragMain) {
                 "MainFragment" -> {

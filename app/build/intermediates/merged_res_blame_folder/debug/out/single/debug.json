@@ -1,0 +1,194 @@
+[
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_foto1.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable-v24\\foto1.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_cancel_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_cancel_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_main.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_main.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\xml_provider_paths.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_description.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\activity_description.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_description.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_description.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\menu_nav_menu.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\menu\\nav_menu.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_event_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_event_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_edit.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_edit.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_map_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_map_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_movie_item.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\movie_item.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_foto.jpg.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable-v24\\foto.jpg"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_event_screen.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\event_screen.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_event_black_24dp.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_event_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_foto3.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable-v24\\foto3.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_event_screen.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_event_screen.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main3.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\activity_main3.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_test.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_test.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_map_screen.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_map_screen.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_reset_password_screen.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_reset_password_screen.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_login_screen2.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_login_screen2.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_start.jpg.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\background_start.jpg"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_contact_child.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\contact_child.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_close_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_close_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_about.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_about.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_new_event.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_new_event.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_check_24.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\drawable\\ic_baseline_check_24.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_description2.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_description2.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact.xml.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\layout\\fragment_contact.xml"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\edb\\projec\\projec\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\edb\\projec\\projec\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    }
+]

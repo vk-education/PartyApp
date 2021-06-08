@@ -16,7 +16,7 @@ var currentFragInMain: String? = null
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var loginScreenFragment: loginScreenFragment
+    lateinit var loginScreenFragment: LoginScreenFragment
     lateinit var mapScreenFragment: MapScreenFragment
     lateinit var aboutFragment: AboutFragment
     lateinit var eventScreenFragment: EventScreenFragment
@@ -28,18 +28,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
-        loginScreenFragment = loginScreenFragment()
+        loginScreenFragment = LoginScreenFragment()
         mapScreenFragment = MapScreenFragment()
         aboutFragment = AboutFragment()
         eventScreenFragment = EventScreenFragment()
         descriptionFragment = DescriptionFragment()
-        //editFragment = EditFragment()
         contactFragment = ContactFragment()
         currentFragMain = "MainFragment"
         currentFragInMain = "AboutFragment"
-
         getPermission()
-
         if (currentFragMain != null) {
             when (currentFragMain) {
                 "MainFragment" -> {
@@ -71,13 +68,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
+        bottom()
+    }
+    private fun bottom(){
         bottom_navigation.select(R.id.ic_active_work)
         if (bottom_navigation != null) {
             val About = AboutFragment()
             val MapScreeen = MapScreenFragment()
             val EventScreen = EventScreenFragment()
-
             bottom_navigation.onItemSelectedListener = { view, menuItem ->
                 when (menuItem.itemId) {
                     R.id.ic_active_work -> {
@@ -94,8 +92,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
     private fun makeCurrentFragmentMainWindow(fragment: Fragment, name: String) {
         currentFragMain = name
         supportFragmentManager.beginTransaction().apply {
@@ -132,6 +128,4 @@ class MainActivity : AppCompatActivity() {
             perms
         )
     }
-
-
 }

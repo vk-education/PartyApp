@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.fragment_login_screen2.*
 import java.lang.reflect.Array.get
 
 
-class loginScreenFragment : Fragment() {
+class LoginScreenFragment : Fragment() {
     private lateinit var pref: SharedPreferences
 
     override fun onCreateView(

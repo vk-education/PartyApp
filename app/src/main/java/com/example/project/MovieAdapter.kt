@@ -11,22 +11,35 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.project.R
 import com.example.project.utils.getPreferenceObjectJson
+import kotlinx.android.synthetic.main.fragment_new_event.*
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class MovieAdapter(val movies: List<Movie>, val fragmentManager: FragmentManager, val pref: SharedPreferences) :
+class MovieAdapter(
+    val movies: List<Movie>,
+    val fragmentManager: FragmentManager,
+    val pref: SharedPreferences
+) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    class MovieViewHolder(itemView: View, val fragmentManager: FragmentManager,  val pref: SharedPreferences) :
+    class MovieViewHolder(
+        itemView: View,
+        val fragmentManager: FragmentManager,
+        val pref: SharedPreferences
+    ) :
         RecyclerView.ViewHolder(itemView) {
 
         fun bind(movie: Movie) {
             itemView.movie_item_tv_name.text = movie.title
             itemView.descriprion.text = movie.description
-            itemView.movie_item_poster.setImageDrawable(BitmapDrawable(itemView.resources, getPreferenceObjectJson(itemView.context, "photo", pref)))
+            if (movie.picture != "")
+                Glide.with(itemView.context).load(movie.picture).into(itemView.movie_item_poster)
+            else
+                Glide.with(itemView.context).load(R.drawable.ic_baseline_event_24)
+                    .into(itemView.movie_item_poster)
             itemView.setOnClickListener() {
-
                 val descriptionFragment = DescriptionFragment()
                 val bundle = Bundle()
                 bundle.putString("title", itemView.movie_item_tv_name.text.toString())
@@ -38,21 +51,7 @@ class MovieAdapter(val movies: List<Movie>, val fragmentManager: FragmentManager
                     "descriptionFragment",
                     fragmentManager
                 )
-
             }
-
-
-            //      val viewFragment = ViewFragment()
-            //это пердача данных из фрагмента в фрагмнт, нашла в интернете, до этого было передала из фрагмента в активити, и работа сделана
-            //по лекции на котлин, там использовался Adapter, Moview и Description. А это в Adaptore, потому что я грубо
-            // заменяла один код другим, не совсем поняла куда и как вставлять.  я сейчас раскомментила, но приложение ломается
-            // потому что я из фрагмента запускаю активити, а надо чтобы переходило в другой фрагмент или создавала(?)
-            //               val bundle = Bundle()
-//                bundle.putParcelable(KEY_PARSE_DATA, details)
-//                viewFragment.setArguments(bundle)
-//                val transaction = fragmentManager.beginTransaction()
-//                transaction.replace(R.id.fragment_desctiption, viewFragment)
-//                transaction.commit()
         }
 
 

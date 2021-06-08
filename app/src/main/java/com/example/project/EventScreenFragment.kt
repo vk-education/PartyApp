@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project.utils.getPreferenceObjectJson
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.FirebaseFirestore
 import service.NewEventService
 
 class EventScreenFragment : Fragment() {
@@ -21,6 +24,7 @@ class EventScreenFragment : Fragment() {
     lateinit var newEventService: NewEventService
     private lateinit var pref: SharedPreferences
 
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,9 +40,10 @@ class EventScreenFragment : Fragment() {
             "sharedPreferences",
             AppCompatActivity.MODE_PRIVATE
         )
+        db = FirebaseFirestore.getInstance()
+        movies.clear()
         newEventService = context?.let { NewEventService(it) }!!
         checkService()
-        initAdapter(view)
         setOnClick(view)
     }
 
@@ -60,20 +65,26 @@ class EventScreenFragment : Fragment() {
 
     private fun checkService() {
 
-        if (newEventService.eventName != null && newEventService.eventName != "" &&
-            newEventService.eventDescription != null && newEventService.eventDescription != ""
-        ) {
-            movies.add(
-                Movie(
-                    newEventService.eventName!!,
-                    newEventService.eventDescription!!,
-                    BitmapDrawable(resources, getPreferenceObjectJson(requireContext(), "photo", pref)) //Сюда добавите нужную фотку
-                )
-            )
+
+        db.collection("event").get().addOnSuccessListener { result ->
+            for (document in result) {
+                if (document.data["imageUrl"] != null && document.data["description"] != null
+                    && document.data["title"] != null
+                ) {
+                    movies.add(
+                        Movie(
+                            document.data["title"].toString(),
+                            document.data["description"].toString(),
+                            document.data["imageUrl"].toString()
+                        )
+                    )
+                }
+            }
+            newEventService.saveEvenName("")
+            newEventService.saveEvenDescr("")
+            newEventService.saveEvenImage(0)
+            initAdapter(requireView())
         }
-        newEventService.saveEvenName("")
-        newEventService.saveEvenDescr("")
-        newEventService.saveEvenImage(0)
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

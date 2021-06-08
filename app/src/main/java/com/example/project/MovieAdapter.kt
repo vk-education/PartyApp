@@ -37,7 +37,8 @@ class MovieAdapter(
             if (movie.picture != "")
                 Glide.with(itemView.context).load(movie.picture).into(itemView.movie_item_poster)
             else
-                Glide.with(itemView.context).load(R.drawable.ic_baseline_event_24).into(itemView.movie_item_poster)
+                Glide.with(itemView.context).load(R.drawable.ic_baseline_event_24)
+                    .into(itemView.movie_item_poster)
             itemView.setOnClickListener() {
                 val descriptionFragment = DescriptionFragment()
                 val bundle = Bundle()

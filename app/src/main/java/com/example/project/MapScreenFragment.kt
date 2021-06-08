@@ -32,15 +32,15 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var lastLocation: Location
 
-    private lateinit var myMarker : Marker
+    private lateinit var myMarker: Marker
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
     private lateinit var locationRequest: LocationRequest
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?,
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_map_screen, container, false)
@@ -62,17 +62,16 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
 
                 lastLocation = p0!!.lastLocation
 
-                if(pref.getString("email", "")!! != "")
-                {
+                if (pref.getString("email", "")!! != "") {
                     db.collection("users").document(pref.getString("email", "")!!)
                         .update("latitude", lastLocation.latitude)
                     db.collection("users").document(pref.getString("email", "")!!)
                         .update("longitude", lastLocation.longitude)
 
-                    if(myMarker != null)
+                    if (myMarker != null)
                         myMarker.position = LatLng(lastLocation.latitude, lastLocation.longitude)
 
-                    if(mMap != null)
+                    if (mMap != null)
                         getUsers(mMap)
                 }
 
@@ -82,41 +81,43 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
         createLocationRequest()
     }
 
-    private fun getUsers(mMap: GoogleMap)
-    {
+    private fun getUsers(mMap: GoogleMap) {
         mMap.clear()
 
         db.collection("users").get().addOnSuccessListener { result ->
-            for(document in result){
-                if(document.data["latitude"] != null && document.data["longitude"] != null)
-                {
-                    val location = LatLng(document.data["latitude"].toString().toDouble(),
-                        document.data["longitude"].toString().toDouble() )
+            for (document in result) {
+                if (document.data["latitude"] != null && document.data["longitude"] != null) {
+                    val location = LatLng(
+                        document.data["latitude"].toString().toDouble(),
+                        document.data["longitude"].toString().toDouble()
+                    )
 
-                    mMap.addMarker(MarkerOptions().position(location).title(document.data["email"]
-                        .toString()))
+                    mMap.addMarker(
+                        MarkerOptions().position(location).title(
+                            document.data["email"]
+                                .toString()
+                        )
+                    )
                 }
             }
         }
     }
 
-   @SuppressLint("MissingPermission")
-   override fun onMapReady(googleMap: GoogleMap) {
-       mMap = googleMap
-       mMap.uiSettings.isZoomControlsEnabled = true
+    @SuppressLint("MissingPermission")
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        mMap.uiSettings.isZoomControlsEnabled = true
 
-       fusedLocationClient.lastLocation.addOnSuccessListener {
-               location ->
-           if(location != null)
-           {
-               lastLocation = location
+        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+            if (location != null) {
+                lastLocation = location
 
-               val currentLatLng = LatLng(location.latitude, location.longitude)
-               mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
 
-               myMarker = mMap.addMarker(MarkerOptions().position(currentLatLng).title("me"))
-           }
-       }
+                myMarker = mMap.addMarker(MarkerOptions().position(currentLatLng).title("me"))
+            }
+        }
 
     }
 

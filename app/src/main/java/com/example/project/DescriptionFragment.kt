@@ -16,9 +16,9 @@ import com.example.project.utils.getPreferenceObjectJson
 import kotlinx.android.synthetic.main.fragment_description.*
 
 class DescriptionFragment : Fragment() {
-    var title:String? = null
+    var title: String? = null
     var description: String? = null
-    var picture:Int? = null
+    var picture: Int? = null
     private lateinit var pref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +50,11 @@ class DescriptionFragment : Fragment() {
         t.text = title
         val d = view.findViewById<TextView>(R.id.description)
         d.text = description
-        poster.setImageDrawable(BitmapDrawable(requireContext().resources,
-            getPreferenceObjectJson(requireContext(), "photo", pref)))
+        poster.setImageDrawable(
+            BitmapDrawable(
+                requireContext().resources,
+                getPreferenceObjectJson(requireContext(), "photo", pref)
+            )
+        )
     }
 }

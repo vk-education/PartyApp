@@ -187,7 +187,7 @@ class NewEventFragment : Fragment() {
                             "${
                                 (
                                         Calendar.getInstance()
-                                    .timeInMillis
+                                            .timeInMillis
                                         )
                             }.jpg"
                         )

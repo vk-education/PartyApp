@@ -67,10 +67,10 @@ class EventScreenFragment : Fragment() {
 
 
         db.collection("event").get().addOnSuccessListener { result ->
-            for(document in result){
-                if(document.data["imageUrl"] != null && document.data["description"] != null
-                    && document.data["title"] != null)
-                {
+            for (document in result) {
+                if (document.data["imageUrl"] != null && document.data["description"] != null
+                    && document.data["title"] != null
+                ) {
                     movies.add(
                         Movie(
                             document.data["title"].toString(),

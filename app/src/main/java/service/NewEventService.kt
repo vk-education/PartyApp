@@ -43,21 +43,21 @@ class NewEventService(context: Context) {
             .apply()
     }
 
-    private fun loadData(){
+    private fun loadData() {
         eventName =
-            if(sharedPreferences.contains(SharedPrefConstans.NAME_OF_EVENT))
+            if (sharedPreferences.contains(SharedPrefConstans.NAME_OF_EVENT))
                 sharedPreferences.getString(SharedPrefConstans.NAME_OF_EVENT, null)
             else
                 null
 
         eventDescription =
-            if(sharedPreferences.contains(SharedPrefConstans.EVENT_DESCR))
+            if (sharedPreferences.contains(SharedPrefConstans.EVENT_DESCR))
                 sharedPreferences.getString(SharedPrefConstans.EVENT_DESCR, null)
             else
                 null
 
         eventImage =
-            if(sharedPreferences.contains(SharedPrefConstans.EVENT_IMAGE))
+            if (sharedPreferences.contains(SharedPrefConstans.EVENT_IMAGE))
                 sharedPreferences.getInt(SharedPrefConstans.EVENT_IMAGE, 0)
             else
                 null

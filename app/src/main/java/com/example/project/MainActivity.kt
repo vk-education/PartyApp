@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var contactFragment: ContactFragment
     lateinit var descriptionFragment: DescriptionFragment
 //    lateinit var editFragment: EditFragment
-    private val CODE = 1
+    private val code = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         EasyPermissions.requestPermissions(
             this,
             perms,
-            CODE,
+            code,
             perms
         )
     }

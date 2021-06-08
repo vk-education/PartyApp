@@ -40,13 +40,13 @@ import java.util.*
 
 class NewEventFragment : Fragment() {
     lateinit var newEventService: NewEventService
-    private val GALLERY = 111
-    private val CAMERA = 112
-    private val PERMISSION_ALL = 2
+    private val gallery = 111
+    private val camera = 112
+    private val permission_all = 2
     private lateinit var pref: SharedPreferences
     var downLoadUrl = ""
 
-    private var PERMISSIONS = arrayOf(
+    private var permissions = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.CAMERA
@@ -114,7 +114,7 @@ class NewEventFragment : Fragment() {
         data: Intent?
     ) {
 
-        if (requestCode == GALLERY) {
+        if (requestCode == gallery) {
             if (data != null) {
 
                 try {
@@ -233,8 +233,8 @@ class NewEventFragment : Fragment() {
         }
 
     private fun setupPermission() {
-        if (!hasPermissions(requireContext(), PERMISSIONS)) {
-            ActivityCompat.requestPermissions(this.requireActivity(), PERMISSIONS, PERMISSION_ALL)
+        if (!hasPermissions(requireContext(), permissions)) {
+            ActivityCompat.requestPermissions(this.requireActivity(), permissions, permission_all)
         } else {
             //showPictureDialog()
             choosePhotoFromGallery()
@@ -246,12 +246,12 @@ class NewEventFragment : Fragment() {
             Intent.ACTION_PICK,
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI
         )
-        startActivityForResult(galleryIntent, GALLERY)
+        startActivityForResult(galleryIntent, gallery)
     }
 
     private fun takePhotoFromCamera() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, CAMERA)
+        startActivityForResult(intent, camera)
     }
 
     private fun saveImage(myBitmap: Bitmap): String {

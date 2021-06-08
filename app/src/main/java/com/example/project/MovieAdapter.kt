@@ -39,7 +39,6 @@ class MovieAdapter(
             else
                 Glide.with(itemView.context).load(R.drawable.ic_baseline_event_24).into(itemView.movie_item_poster)
             itemView.setOnClickListener() {
-
                 val descriptionFragment = DescriptionFragment()
                 val bundle = Bundle()
                 bundle.putString("title", itemView.movie_item_tv_name.text.toString())
@@ -51,21 +50,7 @@ class MovieAdapter(
                     "descriptionFragment",
                     fragmentManager
                 )
-
             }
-
-
-            //      val viewFragment = ViewFragment()
-            //это пердача данных из фрагмента в фрагмнт, нашла в интернете, до этого было передала из фрагмента в активити, и работа сделана
-            //по лекции на котлин, там использовался Adapter, Moview и Description. А это в Adaptore, потому что я грубо
-            // заменяла один код другим, не совсем поняла куда и как вставлять.  я сейчас раскомментила, но приложение ломается
-            // потому что я из фрагмента запускаю активити, а надо чтобы переходило в другой фрагмент или создавала(?)
-            //               val bundle = Bundle()
-//                bundle.putParcelable(KEY_PARSE_DATA, details)
-//                viewFragment.setArguments(bundle)
-//                val transaction = fragmentManager.beginTransaction()
-//                transaction.replace(R.id.fragment_desctiption, viewFragment)
-//                transaction.commit()
         }
 
 

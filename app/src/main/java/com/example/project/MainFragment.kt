@@ -21,8 +21,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bottom_navigation =
-            view.findViewById<github.com.st235.lib_expandablebottombar.ExpandableBottomBar>(R.id.bottom_navigation)
+        val bottom_navigation = view.findViewById<github.com.st235.lib_expandablebottombar.ExpandableBottomBar>(R.id.bottom_navigation)
         bottom_navigation.select(R.id.ic_active_work)
         if (bottom_navigation != null) {
             val About = AboutFragment()
@@ -58,4 +57,3 @@ class MainFragment : Fragment() {
         }
     }
 }
-

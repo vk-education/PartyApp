@@ -64,8 +64,10 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
 
                 if(pref.getString("email", "")!! != "")
                 {
-                    db.collection("users").document(pref.getString("email", "")!!).update("latitude", lastLocation.latitude)
-                    db.collection("users").document(pref.getString("email", "")!!).update("longitude", lastLocation.longitude)
+                    db.collection("users").document(pref.getString("email", "")!!)
+                        .update("latitude", lastLocation.latitude)
+                    db.collection("users").document(pref.getString("email", "")!!)
+                        .update("longitude", lastLocation.longitude)
 
                     if(myMarker != null)
                         myMarker.position = LatLng(lastLocation.latitude, lastLocation.longitude)
@@ -88,9 +90,11 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
             for(document in result){
                 if(document.data["latitude"] != null && document.data["longitude"] != null)
                 {
-                    val location = LatLng(document.data["latitude"].toString().toDouble(),  document.data["longitude"].toString().toDouble() )
+                    val location = LatLng(document.data["latitude"].toString().toDouble(),
+                        document.data["longitude"].toString().toDouble() )
 
-                    mMap.addMarker(MarkerOptions().position(location).title(document.data["email"].toString()))
+                    mMap.addMarker(MarkerOptions().position(location).title(document.data["email"]
+                        .toString()))
                 }
             }
         }

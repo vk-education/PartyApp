@@ -50,18 +50,7 @@ class DescriptionFragment : Fragment() {
         t.text = title
         val d = view.findViewById<TextView>(R.id.description)
         d.text = description
-        poster.setImageDrawable(BitmapDrawable(requireContext().resources, getPreferenceObjectJson(requireContext(), "photo", pref)))
-//        b = view.findViewById(R.id.description) as TextView
-//        a = view.findViewById(R.id.name) as TextView
-//        c = view.findViewById(R.id.poster) as ImageView
-//
-//        val bundle = arguments
-//        if (bundle != null) {
-//            val movie = bundle.getParcelable<Movie>(KEY_PARSE_DATA)
-//            text_name!!.setText(movie.title)
-//            text_desc!!.setText(movie.description)
-//            image.setImageResourse(movie.picture)
-//        }
-//    return view
+        poster.setImageDrawable(BitmapDrawable(requireContext().resources,
+            getPreferenceObjectJson(requireContext(), "photo", pref)))
     }
 }
